@@ -120,7 +120,88 @@ Simple Financing: Need financing? No problem! I can take all your money from you
         </div>
       </div>
     </section>
+<!-- Add this anywhere in your Consulting section or sidebar -->
+<div class="w3-card w3-round-large w3-padding" style="margin: 20px 0; background-color: #f5f5f5;">
+  <h3 class="w3-center">Quick Quote Calculator</h3>
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <label>Select Vehicle:</label>
+      <select class="w3-select w3-border w3-round" id="quoteCar">
+        <option value="250000">Ferrari 488 Pista Spider ($250,000)</option>
+        <option value="1800000">Bugatti Veyron ($1.8M)</option>
+        <option value="45000">Toyota Highlander ($45,000)</option>
+        <option value="350000">Lamborghini Huracan ($350,000)</option>
+        <option value="2500000">Rolls Royce Black Badge ($2.5M)</option>
+        <option value="40000">Tesla Model 3 ($40,000)</option>
+      </select>
+    </div>
+    <div class="w3-half">
+      <label>Down Payment ($):</label>
+      <input class="w3-input w3-border w3-round" type="number" id="downPayment" placeholder="e.g. 10000" value="10000">
+    </div>
+  </div>
+  
+  <div class="w3-row-padding" style="margin-top: 10px;">
+    <div class="w3-half">
+      <label>Loan Term (months):</label>
+      <select class="w3-select w3-border w3-round" id="loanTerm">
+        <option value="24">24 months</option>
+        <option value="36">36 months</option>
+        <option value="48" selected>48 months</option>
+        <option value="60">60 months</option>
+        <option value="72">72 months</option>
+      </select>
+    </div>
+    <div class="w3-half">
+      <label>Interest Rate (%):</label>
+      <input class="w3-input w3-border w3-round" type="number" id="interestRate" step="0.1" value="5.5" placeholder="e.g. 5.5">
+    </div>
+  </div>
+  
+  <button class="w3-button w3-round-large w3-red w3-margin-top" onclick="calculateQuote()" style="width: 100%;">
+    Calculate Payment
+  </button>
+  
+  <div id="quoteResult" class="w3-panel w3-round-large w3-light-grey" style="margin-top: 15px; display: none;">
+    <h4>Estimated Monthly Payment:</h4>
+    <p id="monthlyPayment" style="font-size: 24px; font-weight: bold;">$0.00</p>
+    <p id="loanDetails" style="font-size: 12px;"></p>
+  </div>
+</div>
 
+<script>
+function calculateQuote() {
+  // Get input values
+  const carPrice = parseFloat(document.getElementById('quoteCar').value);
+  const downPayment = parseFloat(document.getElementById('downPayment').value) || 0;
+  const loanTerm = parseInt(document.getElementById('loanTerm').value);
+  const interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
+  
+  // Calculate loan amount
+  const loanAmount = carPrice - downPayment;
+  
+  // Calculate monthly payment
+  const monthlyRate = interestRate / 12;
+  const payment = (loanAmount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -loanTerm));
+  
+  // Display results
+  document.getElementById('monthlyPayment').textContent = '$' + payment.toFixed(2);
+  document.getElementById('loanDetails').innerHTML = 
+    `For a ${loanTerm}-month loan at ${(interestRate*100).toFixed(1)}% APR on $${loanAmount.toLocaleString()}`;
+  
+  // Show results
+  document.getElementById('quoteResult').style.display = 'block';
+  
+  // Scroll to results if needed
+  document.getElementById('quoteResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+</script>
+
+<style>
+#quoteResult {
+  transition: all 0.3s ease;
+}
+</style>
     <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
