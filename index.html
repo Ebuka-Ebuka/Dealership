@@ -1,261 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Ebuka's Cool Cars | Premium Auto Dealership</title>
+    <title>CarDealership</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-highway.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        /* Enhanced News Section Styles */
-        .news-tabs {
-            margin: 40px 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body> 
+
+    <section class="navigation w3-metro-light-blue w3-container">
+       
+          
+        </div>
+        <div class="mobile-button">
+         
+        </div>
+          <div class="w3-top">
+  <div class="w3-bar w3-red">
+    
+        <div class="links">
+          <a href="#about" >ABOUT</a>-
+          <a href="#consulting" >CONSULTING</a>-
+          <a href="#contact" >CONTACT</a>  
         
-        .tab-buttons {
-            display: flex;
-            background: #f1f1f1;
-            border-radius: 8px 8px 0 0;
-            overflow: hidden;
-            margin-bottom: 0;
-        }
-        
-        .tab-btn {
-            flex: 1;
-            padding: 16px;
-            border: none;
-            background: #ddd;
-            cursor: pointer;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-        
-        .tab-btn:hover {
-            background: #ccc;
-        }
-        
-        .tab-btn.active {
-            background: #d50000;
-            color: white;
-        }
-        
-        .tab-content {
-            display: none;
-            padding: 30px;
-            border: 1px solid #ddd;
-            border-top: none;
-            border-radius: 0 0 8px 8px;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            animation: fadeIn 0.5s;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        .news-item {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .news-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .news-item h3 {
-            color: #d50000;
-            margin-bottom: 8px;
-            font-size: 1.4em;
-        }
-        
-        .news-item p.date {
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 12px;
-        }
-        
-        .news-item p.description {
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .news-item a.read-more {
-            color: #d50000;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-        }
-        
-        .news-item a.read-more:hover {
-            text-decoration: underline;
-        }
-        
-        .news-item a.read-more::after {
-            content: "→";
-            margin-left: 5px;
-            transition: transform 0.3s;
-        }
-        
-        .news-item a.read-more:hover::after {
-            transform: translateX(3px);
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .tab-buttons {
-                flex-direction: column;
-            }
-            
-            .tab-content {
-                padding: 20px;
-            }
-        }
-    </style>
+    
+  </div>
+ <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-color: black;}
+#News {background-color: black;}
+#Contact {background-color: black;}
+#About {background-color: black;}
+</style>
 </head>
 <body>
 
-    <section class="navigation w3-metro-light-blue w3-container">
-        <div class="mobile-button"></div>
-        <div class="w3-top">
-            <div class="w3-bar w3-red">
-                <div class="links">
-                    <a href="#about">ABOUT</a>-
-                    <a href="#news">NEWS</a>-
-                    <a href="#gallery">GALLERY</a>-
-                    <a href="#contact">CONTACT</a>
-                </div>
-            </div>
-        </div>
-        <div id="mobile-sidenav" class="mobile-links w3-sand">
-            <a href="javascript:void(0)" class="closebtn w3-round" onclick="toggleMobileNavigation()">&times;</a>
-            <a href="#about" onclick="toggleMobileNavigation()">ABOUT</a>
-            <a href="#news" onclick="toggleMobileNavigation()">NEWS</a>
-            <a href="#gallery" onclick="toggleMobileNavigation()">GALLERY</a>
-            <a href="#contact" onclick="toggleMobileNavigation()">CONTACT</a>
-        </div>
-    </section>
-
-    <section class="hero w3-padding-large w3-container">
-        <h1 style="display: inline;"><span><i></i></span>Discover Your Dream Car at Ebuka's</h1>
-        <p>Where passion meets the road - let's find your perfect match</p>
-        <a href="#contact" class="w3-padding-large w3-round" style="background-color: #d50000; color: white;">Schedule A Test Drive</a>
-    </section>
-
-    <!-- About Section remains unchanged -->
-    <section class="about w3-padding-large w3-container" id="about">
-        <!-- Your existing about content -->
-    </section>
-
-    <!-- Enhanced News Section -->
-    <section class="news-tabs w3-container" id="news">
-        <h2 class="w3-center" style="margin-bottom: 30px; font-size: 2em; color: #333;">What's Happening at Ebuka's</h2>
-        
-        <div class="tab-buttons">
-            <button class="tab-btn active" onclick="openTab(event, 'deals')">Hot Deals</button>
-            <button class="tab-btn" onclick="openTab(event, 'events')">Upcoming Events</button>
-            <button class="tab-btn" onclick="openTab(event, 'reviews')">Customer Stories</button>
-        </div>
-        
-        <!-- Hot Deals Tab -->
-        <div id="deals" class="tab-content active">
-            <div class="news-item">
-                <h3>Summer Clearance Spectacular</h3>
-                <p class="date">June 15, 2023</p>
-                <p class="description">We're rolling out the red carpet for our biggest sale of the year! Save up to 20% on select 2022 models. This is your chance to drive home a luxury vehicle at an unbeatable price. Limited inventory available - these deals won't last!</p>
-                <a href="#contact" class="read-more">See available vehicles</a>
-            </div>
-            
-            <div class="news-item">
-                <h3>Electric Vehicle Financing Special</h3>
-                <p class="date">June 1, 2023</p>
-                <p class="description">Go green and save green! For a limited time, we're offering 0% APR financing on all electric vehicles in stock. Plus, receive a free home charging station with purchase (a $1,200 value). Schedule your test drive today!</p>
-                <a href="#contact" class="read-more">Get financing details</a>
-            </div>
-        </div>
-        
-        <!-- Events Tab -->
-        <div id="events" class="tab-content">
-            <div class="news-item">
-                <h3>Test Drive Extravaganza Weekend</h3>
-                <p class="date">July 8-9, 2023</p>
-                <p class="description">Join us for our most exciting event of the summer! Experience our full lineup of vehicles with no-pressure test drives. Enjoy complimentary gourmet BBQ, live music, and enter to win a weekend getaway package. Families welcome!</p>
-                <a href="#contact" class="read-more">RSVP for the event</a>
-            </div>
-            
-            <div class="news-item">
-                <h3>Ladies' Night: Car Care Workshop</h3>
-                <p class="date">July 20, 2023</p>
-                <p class="description">Empowering women through automotive knowledge! Our free workshop covers basic maintenance, roadside emergencies, and how to spot a good deal. Includes wine tasting and goodie bags for all attendees.</p>
-                <a href="#contact" class="read-more">Sign up now</a>
-            </div>
-        </div>
-        
-        <!-- Reviews Tab -->
-        <div id="reviews" class="tab-content">
-            <div class="news-item">
-                <h3>The Johnson Family's Perfect SUV</h3>
-                <p class="date">May 25, 2023</p>
-                <p class="description">"After searching for months, Ebuka found us the ideal Toyota Highlander that fit both our budget and our growing family's needs. The detailed vehicle history gave us peace of mind we couldn't find elsewhere." - The Johnson Family</p>
-                <a href="#gallery" class="read-more">View similar SUVs</a>
-            </div>
-            
-            <div class="news-item">
-                <h3>From Dream to Reality: Sarah's Ferrari</h3>
-                <p class="date">May 10, 2023</p>
-                <p class="description">"I never thought I'd own my dream car until I met Ebuka. His no-pressure approach and transparent pricing made what seemed impossible completely achievable. Now I cruise in my 488 Pista every weekend!" - Sarah T.</p>
-                <a href="#gallery" class="read-more">Explore luxury vehicles</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Rest of your existing content (gallery, why choose us, contact) -->
-
-    <script>
-        // Tab functionality for News section
-        function openTab(evt, tabName) {
-            // Hide all tab contents
-            const tabContents = document.getElementsByClassName("tab-content");
-            for (let i = 0; i < tabContents.length; i++) {
-                tabContents[i].classList.remove("active");
-            }
-            
-            // Remove active class from all buttons
-            const tabButtons = document.getElementsByClassName("tab-btn");
-            for (let i = 0; i < tabButtons.length; i++) {
-                tabButtons[i].classList.remove("active");
-            }
-            
-            // Show current tab and mark button as active
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
-        
-        // Set first tab as active by default
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelector(".tab-btn").click();
-        });
-        
-        // Your existing JavaScript functions
-        function toggleMobileNavigation() {
-            // Your existing mobile nav toggle
-        }
-    </script>
-
+<button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+<button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">News</button>
+<button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+<button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+</script>
 </div>          
         </div>
         <div id="mobile-sidenav" class="mobile-links w3-sand">
@@ -591,8 +415,136 @@ a:hover, a:active {
 
   
   </div>
+</div>
 
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
 
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
     
 </body>
 </html>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4zT5HQORJfE?si=zRs1h_UMTSx1uWGW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+
+    <section class="w3-panel w3-container content why-us" style="padding: 50px;">
+      <h2 style="text-align: center;">- Why choose us? -</h2>
+      <div class="container boxes">
+        <div class="box w3-round-large">
+          Conmfortable Cars
+        </div>
+        <div class="box w3-round-large">
+          Easy to deal
+        </div>
+        <div class="box w3-round-large">
+          Over 1,000,000 happy clients
+        </div>
+        <div class="box w3-round-large">
+          100% secure
+        </div>
+        <div class="box w3-round-large" style="background-color: rgb(153, 255, 187);">
+          10 business awards
+        </div>
+      </div>
+    </section>
+
+    <section class="contact w3-container contact" id="contact">
+      <div class="short-contact">
+        <h2>- Our contact info - </h2>
+        <div class="w3-large contact-info">
+          <i class="fa fa-address-card"></i><span style="margin-left:10px;"><a href="https://www.google.com/maps?safe=active&sca_esv=64aadbef67b277e9&rlz=1C5CHFA_enUS1089US1089&output=search&q=metro+early+college+high+school&source=lnms&entry=mc&utm_campaign=srp-poit&ved=1t:200715&ictx=111">Metro Early Collage Highschool</a></span><br>
+        
+        </div>
+        <h3 class="w3-margin-top">- Follow me </h3>
+        <div class="w3-large contact-info">
+          
+          <i class=></i><span style="margin-left:10px;"><a href="#" target="_blank" style="text-decoration: none;">- eluke.1@themetroschool.org</a></span><br>
+        </div>
+      </div>
+      <div class="form w3-margin-top">
+        <div class="container w3-round-xlarge">
+          <form class="w3-highway-blue w3-padding-large w3-round-large">
+            <h3 style="text-align: center;"><i class="fa fa-check-square-o" style="font-size: 15px;"></i>Schedule a meeting</h3>
+            <label for="fname">Your name</label>
+            <input type="text" id="name" name="name" placeholder="Your name">
+            <label for="lname">Your email</label>
+            <input type="text" id="email" name="email" placeholder="Your email">
+            <label for="lname">Pick a date</label><br>
+            <input type="date" id="date" name="date" placeholder="Your date"><br><br>
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            <p>By submiting this form, you agree to our <a href="#" target="_blank">privacy policy</a></p><br>
+            <input class="w3-round-large" type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </section>
+<!-- Add this section below the "Why choose us?" section or wherever you prefer -->
+
+<section class="news w3-padding-large w3-container" id="news">
+  <h2 style="text-align: center;">- Latest News -</h2>
+  <div class="w3-row-padding w3-margin-top">
+    <div class="w3-third">
+      <div class="w3-card w3-round-large w3-white">
+        <img src="https://www.cnet.com/a/img/resize/aa1015b5245a837a57dc99891d0a30dd3948f966/hub/2018/08/27/6dd532a6-ddfd-4e53-92b5-34c7439fcee2/ferrari-488-pista-spider-10.jpg?auto=webp&fit=crop&height=675&width=1200" alt="Ferrari 488 Pista Spider" style="width:100%; border-radius: 8px 8px 0 0;">
+        <div class="w3-container w3-padding">
+          <h4>New Arrival: Ferrari 488 Pista Spider</h4>
+          <p>We are excited to announce the arrival of the stunning Ferrari 488 Pista Spider. This beauty combines performance and luxury like no other. Book a test drive today</p>
+          <a href="#contact" class="w3-button w3-round-large w3-metro-light-blue">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third">
+      <div class="w3-card w3-round-large w3-white">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Bugatti_Veyron_16.4_%E2%80%93_Frontansicht_%283%29%2C_5._April_2012%2C_D%C3%BCsseldorf.jpg" alt="Bugatti Veyron" style="width:100%; border-radius: 8px 8px 0 0;">
+        <div class="w3-container w3-padding">
+          <h4>Bugatti Veyron: A Legend Reborn</h4>
+          <p>The iconic Bugatti Veyron is back in stock! Experience the thrill of driving one of the fastest cars in the world. Limited availability</p>
+          <a href="#contact" class="w3-button w3-round-large w3-metro-light-blue">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third">
+      <div class="w3-card w3-round-large w3-white">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/2019_Tesla_Model_3_Performance_AWD_Front.jpg" alt="Tesla Model 3" style="width:100%; border-radius: 8px 8px 0 0;">
+        <div class="w3-container w3-padding">
+          <h4>Tesla Model 3: The Future is Here</h4>
+          <p>Electric cars are the future, and the Tesla Model 3 is leading the charge. Discover why this car is a game-changer in the automotive industry.</p>
+          <a href="#contact" class="w3-button w3-round-large w3-metro-light-blue">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <section class="w3-container footer">
+      
+    </section>
